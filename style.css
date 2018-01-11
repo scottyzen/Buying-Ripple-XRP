@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
 }
 .wrapper {
-  max-width: 650px;
+  max-width: 700px;
   margin: 7.5% auto 0;
   padding: 0 5%;
 }
@@ -21,14 +21,15 @@ ol {
 }
 .quick-tip p {
   display: none;
-  animation: fadein 300ms;
+  animation: fadein 1000ms forwards;
 }
 .show {
-  display: block !important;
   border: 1px solid #42bde8;
+  background-color: rgba(66, 189, 232, 0.05);
   color: #42bde8;
   padding: 2.5%;
   border-radius: 3px;
+  animation: fadeout 300ms forwards;
 }
 
 @keyframes fadein {
@@ -39,5 +40,16 @@ ol {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(25px);
   }
 }

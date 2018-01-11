@@ -7,17 +7,18 @@ const tips = [
 
 let tipElement = document.querySelector(".quick-tip p");
 
-function getRandomTip() {
+function changeTip() {
   tipElement.innerHTML = tips[Math.floor(Math.random() * tips.length - 1) + 1];
-  console.log("tip");
+}
 
+function getRandomTip() {
+  changeTip();
+  tipElement.style.display = "block";
+  setTimeout(() => {
+    tipElement.style.display = "none";
+  }, 11500);
   // and schedule a repeat
   setTimeout(getRandomTip, 12000);
 }
 
-// start the cycle
 getRandomTip();
-
-setTimeout(() => {
-  tipElement.classList = "show";
-}, 3000);
